@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneur Boost - Lancez votre succès</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <img src="https://via.placeholder.com/180x60/2D5A87/FFFFFF?text=ENTREPRENEUR+BOOST" alt="Entrepreneur Boost" class="logo">
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#packs" class="nav-link">Nos Packs</a></li>
+                <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary nav-cta">Demandez un devis</a>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="accueil">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title fade-in">
+                            Transformez votre <span class="highlight">vision entrepreneuriale</span> en succès concret
+                        </h1>
+                        <p class="hero-subtitle fade-in-delay">
+                            Accompagnement personnalisé pour jeunes entrepreneurs, TPE, PME et indépendants.
+                            Lancez votre activité, boostez votre visibilité et organisez des événements marquants.
+                        </p>
+                        <div class="hero-cta fade-in-delay-2">
+                            <a href="#contact" class="btn btn-primary btn-large">
+                                <i class="fas fa-calendar-check"></i>
+                                Réservez un appel découverte
+                            </a>
+                            <a href="#packs" class="btn btn-secondary btn-large">
+                                <i class="fas fa-arrow-down"></i>
+                                Découvrir nos packs
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual fade-in-right">
+                        <div class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Équipe entrepreneuriale dynamique">
+                            <div class="floating-stats">
+                                <div class="stat-card">
+                                    <div class="stat-number">150+</div>
+                                    <div class="stat-label">Clients accompagnés</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">95%</div>
+                                    <div class="stat-label">Taux de satisfaction</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packs Section -->
+        <section class="packs section" id="packs">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Nos Packs d'Accompagnement</h2>
+                    <p class="section-subtitle">Solutions sur-mesure pour chaque étape de votre développement</p>
+                </div>
+
+                <div class="packs-grid">
+                    <div class="pack-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pack-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="pack-title">Pack Lancement</h3>
+                        <p class="pack-description">
+                            Démarrez votre activité avec une stratégie solide et tous les outils essentiels.
+                        </p>
+                        <div class="pack-features">
+                            <span class="feature-tag">Business Plan</span>
+                            <span class="feature-tag">Étude de marché</span>
+                            <span class="feature-tag">Statuts juridiques</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
+                    </div>
+
+                    <div class="pack-card featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pack-badge">Populaire</div>
+                        <div class="pack-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="pack-title">Pack Visibilité</h3>
+                        <p class="pack-description">
+                            Boostez votre présence en ligne et attirez vos clients idéaux.
+                        </p>
+                        <div class="pack-features">
+                            <span class="feature-tag">Site web professionnel</span>
+                            <span class="feature-tag">Stratégie réseaux sociaux</span>
+                            <span class="feature-tag">SEO & Marketing digital</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary pack-cta">En savoir plus</a>
+                    </div>
+
+                    <div class="pack-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pack-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="pack-title">Pack Événementiel</h3>
+                        <p class="pack-description">
+                            Organisez des événements marquants qui font rayonner votre marque.
+                        </p>
+                        <div class="pack-features">
+                            <span class="feature-tag">Conception événement</span>
+                            <span class="feature-tag">Gestion logistique</span>
+                            <span class="feature-tag">Communication</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
+                    </div>
+
+                    <div class="pack-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="pack-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="pack-title">Pack Accompagnement</h3>
+                        <p class="pack-description">
+                            Coaching personnalisé pour développer votre leadership et vos compétences.
+                        </p>
+                        <div class="pack-features">
+                            <span class="feature-tag">Coaching individuel</span>
+                            <span class="feature-tag">Formation équipe</span>
+                            <span class="feature-tag">Suivi mensuel</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
+                    </div>
+
+                    <div class="pack-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="pack-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="pack-title">Pack Premium</h3>
+                        <p class="pack-description">
+                            Solution complète tout-en-un pour une transformation digitale réussie.
+                        </p>
+                        <div class="pack-features">
+                            <span class="feature-tag">Tous les services</span>
+                            <span class="feature-tag">Support prioritaire</span>
+                            <span class="feature-tag">Garantie résultats</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section" id="temoignages">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Ils nous font confiance</h2>
+                    <p class="section-subtitle">Découvrez les témoignages de nos clients satisfaits</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Grâce à leur accompagnement, j'ai pu lancer mon entreprise avec confiance.
+                                Le pack visibilité a transformé ma présence en ligne."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Sarah Martin">
+                            <div class="author-info">
+                                <h4>Sarah Martin</h4>
+                                <p>Fondatrice - EcoDesign Studio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "L'événement organisé pour le lancement de notre produit a dépassé toutes nos attentes.
+                                Une équipe professionnelle et créative."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Thomas Dubois">
+                            <div class="author-info">
+                                <h4>Thomas Dubois</h4>
+                                <p>CEO - TechInnovate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Le coaching a révolutionné ma façon de diriger mon équipe.
+                                Des résultats concrets dès les premières semaines."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Marie Lefevre">
+                            <div class="author-info">
+                                <h4>Marie Lefèvre</h4>
+                                <p>Dirigeante - Consulting Plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logos partenaires -->
+                <div class="partners-section">
+                    <h3 class="partners-title">Nos partenaires de confiance</h3>
+                    <div class="partners-logos">
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/120x60/E2E8F0/64748B?text=Partner+1" alt="Partenaire 1">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/120x60/E2E8F0/64748B?text=Partner+2" alt="Partenaire 2">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/120x60/E2E8F0/64748B?text=Partner+3" alt="Partenaire 3">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/120x60/E2E8F0/64748B?text=Partner+4" alt="Partenaire 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose section" id="apropos">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Pourquoi nous choisir ?</h2>
+                    <p class="section-subtitle">L'expertise et l'accompagnement qui font la différence</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="feature-title">Expertise Reconnue</h3>
+                        <p class="feature-description">
+                            Plus de 10 ans d'expérience dans l'accompagnement d'entrepreneurs
+                            avec un taux de réussite exceptionnel.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="feature-title">Approche Personnalisée</h3>
+                        <p class="feature-description">
+                            Chaque projet est unique. Nous adaptons nos solutions à vos besoins
+                            spécifiques et à vos objectifs.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="feature-title">Résultats Rapides</h3>
+                        <p class="feature-description">
+                            Méthodologie éprouvée pour des résultats concrets et mesurables
+                            dès les premières semaines.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Garantie Satisfaction</h3>
+                        <p class="feature-description">
+                            Nous nous engageons sur vos résultats avec une garantie
+                            satisfaction ou remboursé.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="feature-title">Réseau d'Experts</h3>
+                        <p class="feature-description">
+                            Accès à notre réseau de partenaires spécialisés : juristes,
+                            comptables, développeurs, designers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2 class="cta-title">Prêt à booster votre visibilité dès aujourd'hui ?</h2>
+                        <p class="cta-description">
+                            Rejoignez les 150+ entrepreneurs qui ont transformé leur business avec notre accompagnement.
+                            Prenons rendez-vous pour discuter de votre projet.
+                        </p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary btn-large">
+                            <i class="fas fa-calendar-check"></i>
+                            Réservez votre appel gratuit
+                        </a>
+                        <div class="cta-contact-info">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 1 23 45 67 89</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://via.placeholder.com/200x70/FFFFFF/2D5A87?text=ENTREPRENEUR+BOOST" alt="Entrepreneur Boost">
+                    </div>
+                    <p class="footer-description">
+                        Votre partenaire de confiance pour transformer vos ambitions entrepreneuriales en succès concrets.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Nos Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#packs">Pack Lancement</a></li>
+                        <li><a href="#packs">Pack Visibilité</a></li>
+                        <li><a href="#packs">Pack Événementiel</a></li>
+                        <li><a href="#packs">Pack Accompagnement</a></li>
+                        <li><a href="#packs">Pack Premium</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Liens Utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#mentions-legales">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Avenue des Entrepreneurs<br>75001 Paris, France</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 1 23 45 67 89</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@entrepreneurboost.fr</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Entrepreneur Boost. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

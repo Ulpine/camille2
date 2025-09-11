@@ -1,21 +1,62 @@
-// ===== NAVIGATION MOBILE =====
-const navToggle = document.getElementById('nav-toggle');
+// Navigation
+const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('nav-menu');
+const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Toggle mobile menu
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
-}
+// Mobile menu toggle
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Active navigation link based on scroll position
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (navLink) navLink.classList.add('active');
+        }
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
@@ -196,34 +237,34 @@ statNumbers.forEach(stat => {
 });
 
 // ===== BUTTON RIPPLE EFFECT =====
-const buttons = document.querySelectorAll('.btn');
+// const buttons = document.querySelectorAll('.btn');
 
-buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
+// buttons.forEach(button => {
+//     button.addEventListener('click', function(e) {
+//         const ripple = document.createElement('span');
+//         const rect = this.getBoundingClientRect();
+//         const size = Math.max(rect.width, rect.height);
+//         const x = e.clientX - rect.left - size / 2;
+//         const y = e.clientY - rect.top - size / 2;
 
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(${x}px, ${y}px) scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        `;
+//         ripple.style.cssText = `
+//             position: absolute;
+//             width: ${size}px;
+//             height: ${size}px;
+//             background: rgba(255, 255, 255, 0.3);
+//             border-radius: 50%;
+//             transform: translate(${x}px, ${y}px) scale(0);
+//             animation: ripple 0.6s linear;
+//             pointer-events: none;
+//         `;
 
-        this.appendChild(ripple);
+//         this.appendChild(ripple);
 
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
+//         setTimeout(() => {
+//             ripple.remove();
+//         }, 600);
+//     });
+// });
 
 // Add ripple keyframes
 const style = document.createElement('style');
@@ -247,35 +288,6 @@ if (heroVisual) {
         heroVisual.style.transform = `translateY(${rate}px)`;
     });
 }
-
-// ===== ACTIVE NAVIGATION LINK =====
-const sections = document.querySelectorAll('section[id]');
-
-const observeNavLinks = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-
-            // Remove active class from all nav links
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Add active class to current nav link
-            const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        }
-    });
-}, {
-    threshold: 0.3,
-    rootMargin: '-20% 0px -80% 0px'
-});
-
-sections.forEach(section => {
-    observeNavLinks.observe(section);
-});
 
 // ===== FORM VALIDATION AND SUBMISSION =====
 const contactForms = document.querySelectorAll('form');
@@ -358,6 +370,35 @@ window.addEventListener('scroll', () => {
         scrollToTopBtn.style.transform = 'translateY(100px)';
     }
 });
+
+// Scroll reveal animations
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.cta-section').classList.add('visible');
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+
+            // Animate service cards sequentially
+            if (entry.target.classList.contains('services-preview')) {
+                const cards = entry.target.querySelectorAll('.service-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }
+        }
+    });
+}, observerOptions);
 
 // Scroll to top functionality
 scrollToTopBtn.addEventListener('click', () => {

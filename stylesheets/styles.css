@@ -1,0 +1,39 @@
+/*
+  Fichier principal pour l'organisation modulaire CSS
+  Entrepreneur Boost - Landing Page
+
+  Structure des fichiers CSS :
+  1. Variables globales
+  2. Reset et styles de base
+  3. Classes utilitaires
+  4. Composants (boutons, animations, etc.)
+  5. Layout (header, sections, footer)
+  6. Responsive design
+*/
+
+/* ===== IMPORTS MODULAIRES ===== */
+@import url("variables.css");        /* Variables CSS globales */
+@import url("reset-base.css");       /* Reset et styles de base */
+@import url("utilities.css");        /* Classes utilitaires */
+@import url("buttons.css");          /* Styles des boutons */
+@import url("animations.css");       /* Animations et transitions */
+@import url("header.css");           /* Navigation et header */
+@import url("hero.css");             /* Section héros */
+@import url("sections.css");         /* Sections principales */
+@import url("footer.css");           /* Footer */
+@import url("responsive.css");       /* Media queries responsive */
+@import url("cta.css");            /* Call to Action Section */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/*
+  NOTES D'UTILISATION :
+
+  - Remplacez l'ancien fichier styles.css par ce fichier main-styles.css dans votre HTML
+  - Assurez-vous que tous les fichiers sont dans le même dossier
+  - L'ordre d'import est important pour éviter les conflits CSS
+  - Pour modifier une section spécifique, éditez le fichier correspondant
+
+  EXEMPLE D'UTILISATION DANS HTML :
+  <link rel="stylesheet" href="main-styles.css">
+*/

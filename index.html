@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrepreneur Boost - Lancez votre succès</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./stylesheets/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <!-- <header class="header">
         <nav class="nav container">
             <div class="nav-brand">
-                <img src="https://via.placeholder.com/180x60/2D5A87/FFFFFF?text=ENTREPRENEUR+BOOST" alt="Entrepreneur Boost" class="logo">
+                <img src="https://via.placeholder.com/180x60/2D5A87/FFFFFF?text=ENTREPRENEUR+BOOST" alt="Camille AOULOU" class="logo">
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#accueil" class="nav-link">Accueil</a></li>
@@ -29,11 +29,32 @@
                 <span></span>
             </button>
         </nav>
-    </header>
+    </header> -->
+
+        <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Camille</span>
+                <span class="logo-accent">Aoulou</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#accueil" class="nav-link active">Accueil</a>
+                <a href="#packs" class="nav-link">Nos Packs</a>
+                <a href="#temoignages" class="nav-link">Témoignages</a>
+                <a href="#apropos" class="nav-link">À propos</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero" id="accueil">
+        <!-- <section class="hero" id="accueil">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
@@ -72,7 +93,29 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+            <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Transformez votre vision entrepreneuriale</span>
+                <span class="title-line accent">en succès concret</span>
+            </h1>
+            <p class="hero-subtitle">
+                Accompagnement personnalisé pour jeunes entrepreneurs, TPE, PME et indépendants.
+                Lancez votre activité, boostez votre visibilité et organisez des événements marquants.
+            </p>
+            <div class="hero-buttons">
+                <a href="#packs" class="btn btn-primary">Découvrir nos packs</a>
+                <a href="#apropos" class="btn btn-secondary">Pourquoi nous choisir?</a>
+            </div>
+        </div>
+    </section>
 
         <!-- Packs Section -->
         <section class="packs section" id="packs">
@@ -99,10 +142,10 @@
                         <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
                     </div>
 
-                    <div class="pack-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pack-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="pack-badge">Populaire</div>
                         <div class="pack-icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-crown"></i>
                         </div>
                         <h3 class="pack-title">Pack Visibilité</h3>
                         <p class="pack-description">
@@ -128,38 +171,6 @@
                             <span class="feature-tag">Conception événement</span>
                             <span class="feature-tag">Gestion logistique</span>
                             <span class="feature-tag">Communication</span>
-                        </div>
-                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
-                    </div>
-
-                    <div class="pack-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="pack-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="pack-title">Pack Accompagnement</h3>
-                        <p class="pack-description">
-                            Coaching personnalisé pour développer votre leadership et vos compétences.
-                        </p>
-                        <div class="pack-features">
-                            <span class="feature-tag">Coaching individuel</span>
-                            <span class="feature-tag">Formation équipe</span>
-                            <span class="feature-tag">Suivi mensuel</span>
-                        </div>
-                        <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
-                    </div>
-
-                    <div class="pack-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="pack-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <h3 class="pack-title">Pack Premium</h3>
-                        <p class="pack-description">
-                            Solution complète tout-en-un pour une transformation digitale réussie.
-                        </p>
-                        <div class="pack-features">
-                            <span class="feature-tag">Tous les services</span>
-                            <span class="feature-tag">Support prioritaire</span>
-                            <span class="feature-tag">Garantie résultats</span>
                         </div>
                         <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
                     </div>
@@ -334,30 +345,15 @@
             </div>
         </section>
 
-        <!-- Final CTA Section -->
-        <section class="final-cta section">
-            <div class="container">
-                <div class="cta-content">
-                    <div class="cta-text">
-                        <h2 class="cta-title">Prêt à booster votre visibilité dès aujourd'hui ?</h2>
-                        <p class="cta-description">
-                            Rejoignez les 150+ entrepreneurs qui ont transformé leur business avec notre accompagnement.
-                            Prenons rendez-vous pour discuter de votre projet.
-                        </p>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary btn-large">
-                            <i class="fas fa-calendar-check"></i>
-                            Réservez votre appel gratuit
-                        </a>
-                        <div class="cta-contact-info">
-                            <i class="fas fa-phone"></i>
-                            <span>+33 1 23 45 67 89</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <h2>Prêt à booster votre visibilité dès aujourd'hui ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour discuter de votre projet</p>
+            <button class="btn btn-white">Demander un devis gratuit</button>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
@@ -385,8 +381,6 @@
                         <li><a href="#packs">Pack Lancement</a></li>
                         <li><a href="#packs">Pack Visibilité</a></li>
                         <li><a href="#packs">Pack Événementiel</a></li>
-                        <li><a href="#packs">Pack Accompagnement</a></li>
-                        <li><a href="#packs">Pack Premium</a></li>
                     </ul>
                 </div>
 

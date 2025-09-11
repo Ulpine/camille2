@@ -115,7 +115,73 @@
 
 /* ===== TESTIMONIALS SECTION ===== */
 .testimonials {
-    background: var(--bg-light);
+    background: linear-gradient(135deg, #FAF9F6 0%, #FFF5EB 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background avec éléments flottants */
+.testimonials-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.testimonials .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.testimonials .element-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-primary);
+    top: -150px;
+    right: -150px;
+    animation-delay: 0s;
+}
+
+.testimonials .element-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #E74C3C 0%, #F39C12 100%);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+.testimonials .element-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #3498DB 0%, #2ECC71 100%);
+    top: 90%;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+/* Animation des éléments flottants */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    33% {
+        transform: translateY(-20px) scale(1.05);
+    }
+    66% {
+        transform: translateY(10px) scale(0.95);
+    }
+}
+
+/* Container avec z-index pour être au-dessus du background */
+.testimonials .container {
+    position: relative;
+    z-index: 2;
 }
 
 .testimonials-grid {
@@ -131,6 +197,8 @@
     padding: var(--spacing-2xl);
     box-shadow: var(--shadow-base);
     transition: transform var(--transition-smooth);
+    position: relative;
+    z-index: 3;
 }
 
 .testimonial-card:hover {
@@ -177,46 +245,6 @@
 .author-info p {
     font-size: var(--font-size-sm);
     color: var(--text-medium);
-}
-
-.partners-section {
-    text-align: center;
-    padding-top: var(--spacing-3xl);
-    border-top: 1px solid var(--border-color);
-}
-
-.partners-title {
-    font-size: var(--font-size-lg);
-    color: var(--text-medium);
-    margin-bottom: var(--spacing-xl);
-}
-
-.partners-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-2xl);
-    flex-wrap: wrap;
-}
-
-.partner-logo {
-    opacity: 0.6;
-    transition: opacity var(--transition-base);
-}
-
-.partner-logo:hover {
-    opacity: 1;
-}
-
-.partner-logo img {
-    height: 40px;
-    width: auto;
-    filter: grayscale(100%);
-    transition: filter var(--transition-base);
-}
-
-.partner-logo:hover img {
-    filter: grayscale(0%);
 }
 
 /* ===== WHY CHOOSE US SECTION ===== */

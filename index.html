@@ -39,13 +39,10 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="title-line">Transformez votre vision entrepreneuriale</span>
-                <span class="title-line accent">en succès concret</span>
+                <span class="title-line">Faisons briller</span>
+                <span class="title-line accent">votre business</span>
             </h1>
-            <p class="hero-subtitle">
-                Accompagnement personnalisé pour jeunes entrepreneurs, TPE, PME et indépendants.
-                Lancez votre activité, boostez votre visibilité et organisez des événements marquants.
-            </p>
+            <p class="hero-subtitle">Nous créons vos outils de communication, vos sites web et vos événements pour que vous puissiez vous concentrer sur l’essentiel : votre activité !</p>
             <div class="hero-buttons">
                 <a href="#packs" class="btn btn-primary">Découvrir nos packs</a>
                 <a href="#apropos" class="btn btn-secondary">Pourquoi nous choisir?</a>
@@ -68,12 +65,17 @@
                         </div>
                         <h3 class="pack-title">Pack Lancement</h3>
                         <p class="pack-description">
-                            Démarrez votre activité avec une stratégie solide et tous les outils essentiels.
+                            Pour les indépendants ou petites entreprises qui se lancent.
                         </p>
                         <div class="pack-features">
-                            <span class="feature-tag">Business Plan</span>
-                            <span class="feature-tag">Étude de marché</span>
-                            <span class="feature-tag">Statuts juridiques</span>
+                            <span class="feature-tag">Création d’une identité visuelle simple</span>
+                            <span class="feature-tag">Mise en place d’un site vitrine</span>
+                            <span class="feature-tag">Création d’une page pro sur 1 ou 2 réseaux sociaux (Facebook, Insta, LinkedIn)</span>
+                            <span class="feature-tag">Formation express : comment bien utiliser ses outils au quotidien</span>
+                            <span class="feature-tag">Prix : à partir de 1000€</span>
+
+
+
                         </div>
                         <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
                     </div>
@@ -83,14 +85,17 @@
                         <div class="pack-icon">
                             <i class="fas fa-crown"></i>
                         </div>
-                        <h3 class="pack-title">Pack Visibilité</h3>
+                        <h3 class="pack-title">Pack Visibilité locale</h3>
                         <p class="pack-description">
-                            Boostez votre présence en ligne et attirez vos clients idéaux.
+                            Pour artisans, commerçants, TPE qui veulent attirer des clients rapidement.
                         </p>
                         <div class="pack-features">
-                            <span class="feature-tag">Site web professionnel</span>
-                            <span class="feature-tag">Stratégie réseaux sociaux</span>
-                            <span class="feature-tag">SEO & Marketing digital</span>
+                            <span class="feature-tag">Création ou optimisation de la fiche Google Business Profile</span>
+                            <span class="feature-tag">Conception de supports de communication (flyer + affiche)</span>
+                            <span class="feature-tag">Pack Réseaux sociaux : 10 posts + 5 stories prêts à publier</span>
+                            <span class="feature-tag">Création et gestion des campagnes locales ads</span>
+                            <span class="feature-tag">Conseils pour relayer l’info localement (presse, partenariats, bouche-à-oreille digital)</span>
+                            <span class="feature-tag">Prix : à partir de 600€</span>
                         </div>
                         <a href="#contact" class="btn btn-primary pack-cta">En savoir plus</a>
                     </div>
@@ -101,12 +106,20 @@
                         </div>
                         <h3 class="pack-title">Pack Événementiel</h3>
                         <p class="pack-description">
-                            Organisez des événements marquants qui font rayonner votre marque.
+                            Pour marquer un temps fort (lancement produit, portes ouvertes, soirée clients, inauguration)
                         </p>
+                        <h4>Version Essentiel</h4>
                         <div class="pack-features">
-                            <span class="feature-tag">Conception événement</span>
-                            <span class="feature-tag">Gestion logistique</span>
-                            <span class="feature-tag">Communication</span>
+                            <span class="feature-tag">Conception & organisation de l’événement</span>
+                            <span class="feature-tag">Création des supports de communication (invitation, posts réseaux, emailing)</span>
+                            <span class="feature-tag">Gestion des inscriptions/RSVP</span>
+                            <span class="feature-tag">Plan de communication avant & après l’événement</span>
+                            <span class="feature-tag">Prix : à partir de 600€</span>
+                        <h4>Version Premium</h4>
+                            <span class="feature-tag">Coordination des prestataires</span>
+                            <span class="feature-tag">Présence le jour J</span>
+                            <span class="feature-tag">Communication live (stories, posts)</span>
+                            <span class="feature-tag">Prix : à partir de 1200€</span>
                         </div>
                         <a href="#contact" class="btn btn-outline pack-cta">En savoir plus</a>
                     </div>
@@ -267,15 +280,219 @@
             </div>
         </section>
 
-            <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-bg"></div>
         <div class="container">
             <h2>Prêt à booster votre visibilité dès aujourd'hui ?</h2>
             <p>Contactez-nous dès aujourd'hui pour discuter de votre projet</p>
-            <button class="btn btn-white">Demander un devis gratuit</button>
+            <button class="btn btn-white" id="demanderDevisBtn">On discute ?</button>
         </div>
     </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contactFormSection">
+        <div class="container">
+            <div class="form-header">
+                <h2>Demandez votre devis gratuit</h2>
+                <p>Remplissez ce formulaire et nous vous recontacterons dans les 24h</p>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contactForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="prenom" class="form-label required">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" class="form-input" required>
+                            <div class="error-message" id="prenomError">Veuillez saisir votre prénom</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nom" class="form-label required">Nom</label>
+                            <input type="text" id="nom" name="nom" class="form-input" required>
+                            <div class="error-message" id="nomError">Veuillez saisir votre nom</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label required">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="error-message" id="emailError">Veuillez saisir un email valide</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone" class="form-label">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" class="form-input">
+                            <div class="error-message" id="telephoneError">Format de téléphone invalide</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entreprise" class="form-label">Entreprise</label>
+                            <input type="text" id="entreprise" name="entreprise" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pack" class="form-label required">Pack souhaité</label>
+                            <select id="pack" name="pack" class="form-select" required>
+                                <option value="">Choisissez un pack</option>
+                                <option value="lancement">Pack Lancement</option>
+                                <option value="visibilite">Pack Visibilité</option>
+                                <option value="evenementiel">Pack Événementiel</option>
+                                <option value="sur-mesure">Solution sur-mesure</option>
+                            </select>
+                            <div class="error-message" id="packError">Veuillez choisir un pack</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message" class="form-label required">Décrivez votre projet</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Parlez-nous de votre projet, vos objectifs, vos besoins spécifiques..." required></textarea>
+                            <div class="error-message" id="messageError">Veuillez décrire votre projet</div>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rgpd" name="rgpd" class="checkbox-input" required>
+                        <label for="rgpd" class="checkbox-label">
+                            J'accepte que mes données personnelles soient utilisées pour me recontacter dans le cadre de ma demande. *
+                        </label>
+                    </div>
+                    <div class="error-message" id="rgpdError">Vous devez accepter le traitement de vos données</div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <div class="loading-spinner" id="loadingSpinner"></div>
+                            <span id="submitText">Envoyer ma demande</span>
+                            <i class="fas fa-paper-plane" id="submitIcon"></i>
+                        </button>
+                        <button type="button" class="btn-cancel" id="cancelBtn">Annuler</button>
+                    </div>
+
+                    <div class="form-success" id="successMessage">
+                        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Demande envoyée avec succès !</h3>
+                        <p>Nous vous recontacterons dans les 24h pour discuter de votre projet.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+<section class="faq section" id="faq">
+    <div class="faq-bg">
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
+    </div>
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Questions Fréquemment Posées</h2>
+            <p class="section-subtitle">Trouvez rapidement les réponses à vos questions</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question">
+                    <h3>À qui s'adressent vos services ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Nos packs s'adressent aux entrepreneurs, indépendants, TPE et PME qui souhaitent gagner en visibilité et développer leur activité rapidement, sans avoir à tout gérer seuls.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="faq-question">
+                    <h3>Je débute mon activité, est-ce que vos packs sont adaptés ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Oui ! Nous proposons des solutions clé en main pour lancer votre activité sereinement : création de site internet, visibilité locale, réseaux sociaux, et campagnes publicitaires adaptées à votre budget.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    <h3>Puis-je personnaliser un pack selon mes besoins ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolument. Chaque pack peut être adapté en fonction de vos objectifs et de votre secteur d'activité. Nous travaillons avec vous pour créer une offre sur mesure.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                <div class="faq-question">
+                    <h3>Quels sont les délais de réalisation ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Cela dépend du type de prestation. Un pack de posts pour les réseaux sociaux peut être prêt en quelques jours, tandis qu'un site internet peut nécessiter plusieurs semaines selon sa complexité.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <h3>Quels sont vos tarifs ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Les tarifs varient en fonction du pack choisi et des personnalisations. Nous privilégions la transparence : chaque client reçoit un devis clair et détaillé avant le lancement du projet.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="faq-question">
+                    <h3>Est-ce que vous accompagnez sur la durée ou seulement au lancement ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Nous proposons à la fois des prestations ponctuelles (ex. création de site ou flyers) et des accompagnements réguliers (gestion des réseaux sociaux, campagnes publicitaires continues).</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    <h3>Puis-je suivre les résultats de vos actions marketing ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Oui. Pour les campagnes publicitaires (Google Ads, Facebook Ads), nous fournissons des rapports clairs et détaillés afin que vous puissiez mesurer le retour sur investissement.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="faq-question">
+                    <h3>Comment démarrer avec vous ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Il suffit de nous contacter via le formulaire du site ou par téléphone. Nous discuterons de vos besoins, établirons un devis et définirons ensemble un plan d'action adapté.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-cta">
+            <p>Vous avez une autre question ?</p>
+            <a href="#contact" class="btn btn-primary">Contactez-nous</a>
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- Footer -->
@@ -341,7 +558,8 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/form.js"></script>
+    <script src="./javascript/faq.js"></script>
 </html>

@@ -143,20 +143,137 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== PACK CARDS HOVER EFFECTS =====
-const packCards = document.querySelectorAll('.pack-card');
+// const packCards = document.querySelectorAll('.pack-card');
 
-packCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-8px) scale(1.02)';
-    });
+// packCards.forEach(card => {
+//     card.addEventListener('mouseenter', () => {
+//         card.style.transform = 'translateY(-8px) scale(1.02)';
+//     });
 
-    card.addEventListener('mouseleave', () => {
-        if (!card.classList.contains('featured')) {
-            card.style.transform = 'translateY(0) scale(1)';
-        } else {
-            card.style.transform = 'translateY(0) scale(1.05)';
-        }
-    });
+//     card.addEventListener('mouseleave', () => {
+//         if (!card.classList.contains('featured')) {
+//             card.style.transform = 'translateY(0) scale(1)';
+//         } else {
+//             card.style.transform = 'translateY(0) scale(1.05)';
+//         }
+//     });
+// });
+
+// ===== PACK SECTION JAVASCRIPT SIMPLIFIÉ =====
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ===== VERSION TOGGLE (Pack Événementiel) =====
+    const initVersionToggle = () => {
+        const versionButtons = document.querySelectorAll('.version-btn');
+
+        if (versionButtons.length === 0) return;
+
+        versionButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Éviter les clics multiples
+                if (this.classList.contains('active')) return;
+
+                const version = this.dataset.version;
+                const isPremium = version === 'premium';
+
+                // Mise à jour des boutons
+                versionButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Éléments à modifier
+                const priceEssentiel = document.querySelector('.price-essentiel');
+                const pricePremium = document.querySelector('.price-premium');
+                const featuresEssentiel = document.querySelector('.features-essentiel');
+                const featuresPremium = document.querySelector('.features-premium');
+
+                // Changement de contenu
+                if (isPremium) {
+                    // Afficher premium
+                    if (priceEssentiel) priceEssentiel.style.display = 'none';
+                    if (pricePremium) pricePremium.style.display = 'block';
+                    if (featuresEssentiel) featuresEssentiel.style.display = 'none';
+                    if (featuresPremium) featuresPremium.style.display = 'block';
+                } else {
+                    // Afficher essentiel
+                    if (priceEssentiel) priceEssentiel.style.display = 'block';
+                    if (pricePremium) pricePremium.style.display = 'none';
+                    if (featuresEssentiel) featuresEssentiel.style.display = 'block';
+                    if (featuresPremium) featuresPremium.style.display = 'none';
+                }
+            });
+        });
+    };
+
+    // ===== BOUTONS CTA =====
+    const initCTAButtons = () => {
+        const packCTAs = document.querySelectorAll('.pack-cta');
+
+        packCTAs.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Scroll vers la section contact
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+
+                // Feedback visuel simple
+                const originalText = this.textContent;
+                this.textContent = 'Redirection...';
+
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 1000);
+            });
+        });
+    };
+
+    // ===== ANIMATIONS D'APPARITION =====
+    const initScrollAnimations = () => {
+        const cards = document.querySelectorAll('.pack-card');
+
+        // Style initial
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+        });
+
+        // Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const delay = Array.from(card.parentElement.children).indexOf(card) * 100;
+
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, delay);
+
+                    observer.unobserve(card);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        cards.forEach(card => observer.observe(card));
+    };
+
+    // ===== INITIALISATION =====
+    initVersionToggle();
+    initCTAButtons();
+
+    // Attendre un peu pour les animations
+    setTimeout(initScrollAnimations, 100);
+
+    console.log('✅ Section Packs initialisée');
 });
 
 // ===== TESTIMONIAL CARDS ANIMATION =====

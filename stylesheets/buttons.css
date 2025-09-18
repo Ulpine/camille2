@@ -1,5 +1,11 @@
-/* ===== BUTTONS ===== */
-.btn {
+/* ===== BUTTONS UNIFIÉ AVEC EFFET DE BRILLANCE ===== */
+
+/* Base commune pour tous les boutons */
+.btn,
+.pack-cta,
+.btn-submit,
+.btn-cancel,
+.version-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -13,18 +19,65 @@
     cursor: pointer;
     transition: all var(--transition-smooth);
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
+/* EFFET DE BRILLANCE POUR TOUS LES BOUTONS */
+.btn::before,
+.pack-cta::before,
+.btn-submit::before,
+.btn-cancel::before,
+.version-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.btn:hover::before,
+.pack-cta:hover::before,
+.btn-submit:hover::before,
+.btn-cancel:hover::before,
+.version-btn:hover::before {
+    left: 100%;
+}
+
+/* S'assurer que le contenu reste visible */
+.btn > *,
+.pack-cta > *,
+.btn-submit > *,
+.btn-cancel > *,
+.version-btn > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== VARIANTES DE BOUTONS ===== */
+
+/* Bouton Primary */
 .btn-primary {
     background: var(--gradient-primary);
     color: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
+/* Bouton Secondary */
 .btn-secondary {
     background: transparent;
     color: var(--primary-color);
@@ -36,6 +89,7 @@
     color: var(--bg-white);
 }
 
+/* Bouton Outline */
 .btn-outline {
     background: transparent;
     color: var(--text-dark);
@@ -48,74 +102,145 @@
     border-color: var(--primary-color);
 }
 
-.btn-large {
-    padding: var(--spacing-base) var(--spacing-xl);
-    font-size: var(--font-size-base);
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.btn-primary {
-    background: var(--gradient-primary);
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
+/* Bouton White */
 .btn-white {
     background: var(--white);
     color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-white:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== BOUTONS SPÉCIFIQUES DU FORMULAIRE ===== */
+
+/* Bouton Submit */
+.btn-submit {
+    background: var(--gradient-primary);
+    color: var(--bg-white);
+    padding: var(--spacing-base) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-submit:disabled:hover {
+    transform: none;
+}
+
+/* Bouton Cancel */
+.btn-cancel {
+    background: transparent;
+    color: var(--text-medium);
+    border-color: var(--border-color);
+    padding: var(--spacing-base) var(--spacing-xl);
+    font-size: var(--font-size-base);
+}
+
+.btn-cancel:hover {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    border-color: var(--text-medium);
+}
+
+/* ===== BOUTONS DE VERSION TOGGLE ===== */
+
+.version-btn {
+    flex: 1;
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-medium);
+    transition: all var(--transition-smooth);
+}
+
+.version-btn.active {
+    background: var(--bg-white);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.version-btn:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+/* ===== TAILLES DE BOUTONS ===== */
+
+.btn-large {
+    padding: var(--spacing-base) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-base);
+    font-size: var(--font-size-xs);
+}
+
+/* ===== ÉTATS SPÉCIAUX ===== */
+
+/* Loading state pour les boutons de formulaire */
+.btn-submit.loading {
+    pointer-events: none;
+}
+
+.loading-spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.btn-submit.loading .loading-spinner {
+    display: block;
+}
+
+.btn-submit.loading #submitText,
+.btn-submit.loading #submitIcon {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .btn {
+        padding: var(--spacing-xs) var(--spacing-base);
+        font-size: var(--font-size-xs);
+    }
+
+    .btn-large {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+
+    .btn-submit,
+    .btn-cancel {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
 }

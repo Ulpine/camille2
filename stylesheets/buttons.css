@@ -93,13 +93,13 @@
 .btn-outline {
     background: transparent;
     color: var(--text-dark);
-    border-color: var(--border-color);
+    border: var(--border-color) 1px solid !important;
 }
 
 .btn-outline:hover {
     background: var(--primary-color);
     color: var(--bg-white);
-    border-color: var(--primary-color);
+    border: none !important;
 }
 
 /* Bouton White */

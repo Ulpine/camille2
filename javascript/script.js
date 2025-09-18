@@ -214,11 +214,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
 
                 // Scroll vers la section contact
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({
+                const ctaSection = document.querySelector('#ctaSection');
+                if (ctaSection) {
+                    ctaSection.scrollIntoView({
                         behavior: 'smooth',
-                        block: 'start'
+                        block: 'start',
                     });
                 }
 

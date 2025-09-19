@@ -228,23 +228,6 @@
     opacity: 1;
 }
 
-/* Features premium */
-/* .feature-item.premium .feature-bullet {
-    background: var(--secondary-color);
-}
-
-.feature-item.premium {
-    background: linear-gradient(90deg, transparent 0%, rgba(44, 62, 80, 0.05) 100%);
-    border-left: 3px solid var(--secondary-color);
-}
-
-.feature-item span {
-    color: var(--text-dark);
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
-    font-weight: 500;
-} */
-
 /* ===== PACK FOOTER ===== */
 .pack-footer {
     padding: var(--spacing-xl);

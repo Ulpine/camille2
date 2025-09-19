@@ -81,7 +81,8 @@
 .btn-secondary {
     background: transparent;
     color: var(--primary-color);
-    border-color: var(--primary-color);
+    border: 1px solid !important;
+    border-color: var(--gradient-primary);
 }
 
 .btn-secondary:hover {

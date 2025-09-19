@@ -96,3 +96,279 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
+
+/* ===== DÉCOR SUBTIL DE BACKGROUND ===== */
+
+/* Animation globale pour les éléments flottants */
+@keyframes bg-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(120deg); }
+    66% { transform: translateY(-10px) rotate(240deg); }
+}
+
+@keyframes bg-floatReverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(10px) rotate(-120deg); }
+    66% { transform: translateY(-15px) rotate(-240deg); }
+}
+
+@keyframes bg-pulse {
+    0%, 100% { opacity: 0.02; transform: scale(1); }
+    50% { opacity: 0.06; transform: scale(1.1); }
+}
+
+@keyframes bg-drift {
+    0% { transform: translateX(-100px) translateY(0px); }
+    50% { transform: translateX(50px) translateY(-30px); }
+    100% { transform: translateX(200px) translateY(0px); }
+}
+
+/* Container global pour tous les décors */
+.site-background-decor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -10;
+    overflow: hidden;
+}
+
+/* Décor principal - formes géométriques */
+.bg-geometric-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-shape {
+    position: absolute;
+    opacity: 0.03;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+}
+
+.bg-shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: -100px;
+    animation: bg-float 20s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.bg-shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: -80px;
+    animation: bg-floatReverse 25s ease-in-out infinite;
+    animation-delay: -5s;
+    background: var(--gradient-dark);
+}
+
+.bg-shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 20%;
+    animation: bg-pulse 15s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.bg-shape-4 {
+    width: 100px;
+    height: 100px;
+    top: 80%;
+    right: 15%;
+    animation: bg-float 18s ease-in-out infinite;
+    animation-delay: -8s;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* Particules flottantes */
+.bg-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.bg-particle-1 {
+    top: 20%;
+    left: 10%;
+    animation: drift 30s linear infinite;
+    animation-delay: 0s;
+}
+
+.bg-particle-2 {
+    top: 50%;
+    left: 30%;
+    animation: drift 35s linear infinite;
+    animation-delay: -10s;
+}
+
+.bg-particle-3 {
+    top: 70%;
+    left: 60%;
+    animation: drift 25s linear infinite;
+    animation-delay: -20s;
+    background: var(--accent-color);
+}
+
+.bg-particle-4 {
+    top: 40%;
+    left: 80%;
+    animation: drift 40s linear infinite;
+    animation-delay: -15s;
+}
+
+.bg-particle-5 {
+    top: 15%;
+    left: 50%;
+    animation: drift 28s linear infinite;
+    animation-delay: -25s;
+    background: var(--secondary-color);
+}
+
+/* Lignes subtiles */
+.bg-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+    opacity: 0.02;
+    height: 1px;
+}
+
+.bg-line-1 {
+    width: 60%;
+    top: 25%;
+    left: -30%;
+    transform: rotate(15deg);
+    animation: drift 45s linear infinite;
+}
+
+.bg-line-2 {
+    width: 40%;
+    top: 60%;
+    right: -20%;
+    transform: rotate(-10deg);
+    animation: drift 50s linear infinite reverse;
+    animation-delay: -20s;
+}
+
+.bg-line-3 {
+    width: 80%;
+    top: 80%;
+    left: -40%;
+    transform: rotate(5deg);
+    animation: drift 35s linear infinite;
+    animation-delay: -30s;
+}
+
+/* Motifs géométriques complexes */
+.bg-pattern {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 0.015;
+    background-image:
+        radial-gradient(circle at 25% 25%, var(--primary-color) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, var(--accent-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.bg-pattern-1 {
+    top: 10%;
+    left: 5%;
+    animation: float 60s ease-in-out infinite;
+}
+
+.bg-pattern-2 {
+    top: 50%;
+    right: 10%;
+    animation: floatReverse 70s ease-in-out infinite;
+    animation-delay: -20s;
+}
+
+/* Gradient overlay subtil pour unifier */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at top left, rgba(212, 165, 116, 0.015) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(231, 76, 60, 0.015) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(44, 62, 80, 0.01) 0%, transparent 70%);
+}
+
+/* Effets spéciaux pour les sections importantes */
+.hero .bg-special-effect,
+.cta-section .bg-special-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(231, 76, 60, 0.02) 0%, transparent 50%);
+    animation: pulse 10s ease-in-out infinite;
+}
+
+/* Responsive - réduction des effets sur mobile */
+@media (max-width: 768px) {
+    .bg-shape {
+        opacity: 0.02;
+    }
+
+    .bg-particle {
+        opacity: 0.1;
+    }
+
+    .bg-line {
+        opacity: 0.01;
+    }
+
+    .bg-pattern {
+        opacity: 0.01;
+    }
+
+    /* Réduction des animations sur mobile pour les performances */
+    .bg-shape-1,
+    .bg-shape-2 {
+        animation-duration: 40s;
+    }
+
+    .bg-particle {
+        animation-duration: 60s;
+    }
+}
+
+/* Performance - pause des animations quand pas visible */
+@media (prefers-reduced-motion: reduce) {
+    .bg-shape,
+    .bg-particle,
+    .bg-line,
+    .bg-pattern,
+    .bg-special-effect {
+        animation: none;
+    }
+}

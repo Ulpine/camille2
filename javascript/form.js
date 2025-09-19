@@ -41,6 +41,9 @@ class ContactFormManager {
             this.showForm();
         });
 
+        // Gérer tous les liens "Contactez-nous" qui pointent vers #ctaSection
+        this.setupContactLinks();
+
         // Cacher le formulaire quand on clique sur "Annuler"
         this.cancelBtn.addEventListener('click', () => {
             this.hideForm();
@@ -66,6 +69,27 @@ class ContactFormManager {
                 if (rgpdCheckbox.checked) {
                     this.clearFieldError(rgpdCheckbox);
                 }
+            });
+        }
+    }
+
+    setupContactLinks() {
+        // Trouver tous les liens qui pointent vers #ctaSection
+        const contactLinks = document.querySelectorAll('a[href="#ctaSection"]');
+
+        contactLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showForm();
+            });
+        });
+
+        // Alternative : si vous préférez cibler spécifiquement le lien dans la FAQ
+        const faqContactBtn = document.querySelector('.faq-cta .btn');
+        if (faqContactBtn) {
+            faqContactBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showForm();
             });
         }
     }

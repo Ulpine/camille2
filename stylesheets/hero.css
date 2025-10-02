@@ -71,10 +71,41 @@
 }
 
 .title-line {
-    display: block;
+    display: inline-block;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease-out forwards;
+    position: relative;
+}
+
+.sparkle-star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    margin-left: 5px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.3) rotate(180deg);
+        filter: brightness(1.5);
+    }
+}
+
+/* Responsive pour l'étoile */
+@media (max-width: 768px) {
+    .sparkle-star {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 .title-line:nth-child(2) {

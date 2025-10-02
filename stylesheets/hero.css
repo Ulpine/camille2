@@ -80,25 +80,25 @@
 
 .sparkle-star {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    top: -10px;
-    margin-left: 10px;
-    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    width: 35px;
+    height: 35px;
+    top: -5px;
+    margin-left: 8px;
+    filter: drop-shadow(0 0 4px #E74C3C);
 }
 
 .sparkle-star .shine-center {
-    animation: shineCenter 2s ease-in-out infinite;
+    animation: shineCenter 2.5s ease-in-out infinite;
 }
 
 .sparkle-star .shine-mid {
-    animation: shineMid 2s ease-in-out infinite;
+    animation: shineMid 2.5s ease-in-out infinite;
 }
 
 @keyframes shineCenter {
     0%, 100% {
-        stop-color: #FFD700;
-        stop-opacity: 1;
+        stop-color: #D4A574;
+        stop-opacity: 0.8;
     }
     50% {
         stop-color: #FFF9E6;
@@ -108,20 +108,20 @@
 
 @keyframes shineMid {
     0%, 100% {
-        stop-color: #FFD700;
-        offset: 40%;
+        stop-color: #E74C3C;
+        offset: 50%;
     }
     50% {
-        stop-color: #FFED4E;
-        offset: 70%;
+        stop-color: #D4A574;
+        offset: 30%;
     }
 }
 
 /* Responsive pour l'étoile */
 @media (max-width: 768px) {
     .sparkle-star {
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
     }
 }
 

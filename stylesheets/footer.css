@@ -12,23 +12,11 @@
     margin-bottom: var(--spacing-3xl);
 }
 
-.footer-section:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-logo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: var(--spacing-base);
-}
-
 .footer-logo img {
     height: 60px;
     width: auto;
+    margin-bottom: var(--spacing-base);
+    text-align: center;
 }
 
 .footer-description {
@@ -40,7 +28,6 @@
 .social-links {
     display: flex;
     gap: var(--spacing-base);
-    justify-content: center;
 }
 
 .social-link {

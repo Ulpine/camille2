@@ -26,19 +26,18 @@
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
     cursor: pointer;
 }
 
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    color: var(--text-dark);
+.logo-img {
+    height: 70px;
+    width: auto;
+    /* object-fit: contain; */
+    transition: var(--transition);
 }
 
-.logo-accent {
-    color: var(--primary-color);
-    font-weight: 400;
+.logo-img:hover {
+    opacity: 0.8;
 }
 
 .nav-menu {

@@ -3,6 +3,7 @@ const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('nav-menu');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelectorAll('.nav-link');
+const logo = document.querySelector('.logo'); // Ajouter cette ligne
 
 // Mobile menu toggle
 hamburger.addEventListener('click', () => {
@@ -17,6 +18,22 @@ navLinks.forEach(link => {
         navMenu.classList.remove('active');
     });
 });
+
+// NOUVEAU : Logo redirection vers l'accueil au clic
+if (logo) {
+    logo.addEventListener('click', () => {
+        const homeSection = document.querySelector('#accueil');
+        if (homeSection) {
+            homeSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        // Fermer le menu mobile si ouvert
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+}
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -59,6 +76,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ... le reste du code reste identique ...
 
 // ===== SCROLL EFFECTS =====
 // Header background on scroll

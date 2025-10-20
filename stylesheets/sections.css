@@ -346,7 +346,7 @@
     }
 
     .feature-item {
-        padding: var(--spacing-xs) var(--spacing-sm);
+        padding: var(--spacing-xxs) var(--spacing-xxs);
     }
 
     .pack-badge {

@@ -262,7 +262,7 @@
     }
 
     .faq-cta {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-base);
         margin: 0 var(--spacing-base);
         margin-top: var(--spacing-2xl);
     }

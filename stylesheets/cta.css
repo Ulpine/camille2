@@ -109,7 +109,7 @@
 /* Mobile */
 @media (max-width: 768px) {
     .cta-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-sm);
     }
 
     .cta-section h2 {

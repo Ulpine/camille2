@@ -109,11 +109,11 @@
 /* Mobile */
 @media (max-width: 768px) {
     .cta-section {
-        padding: var(--spacing-lg) var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
 
     .cta-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         letter-spacing: 1px;
     }
 

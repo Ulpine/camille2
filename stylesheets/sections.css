@@ -175,15 +175,15 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
 }
 
 .feature-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     text-align: left;
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs);
     border-radius: var(--border-radius);
     transition: all var(--transition-smooth);
 }
@@ -256,6 +256,66 @@
     left: 100%;
 }
 
+/* ===== SECTION DE PERSONNALISATION ===== */
+.packs-custom-section {
+    margin-top: var(--spacing-4xl);
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.packs-custom-section h3 {
+    margin-bottom: var(--spacing-base);
+    font-size: var(--font-size-2xl);
+    color: var(--text-dark);
+}
+
+.packs-custom-section p {
+    color: var(--text-medium);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.packs-custom-cta {
+    display: inline-block;
+    padding: var(--spacing-base) var(--spacing-2xl);
+    background: var(--gradient-primary);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.packs-custom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.packs-custom-cta:hover::before {
+    left: 100%;
+}
+
+.packs-custom-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .packs-grid {
@@ -292,6 +352,15 @@
     .pack-badge {
         font-size: 0.7rem;
         padding: 4px 8px;
+    }
+
+    .packs .container > h3 {
+        margin-top: var(--spacing-3xl);
+        font-size: var(--font-size-xl);
+    }
+
+    .packs .container > p {
+        font-size: var(--font-size-sm);
     }
 }
 
@@ -437,7 +506,7 @@
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
 }
 
 .feature-card {

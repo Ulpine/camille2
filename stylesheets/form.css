@@ -8,14 +8,13 @@
     transition: all var(--transition-smooth);
     max-height: 0;
     overflow: hidden;
-    /* IMPORTANT: Pas de padding quand caché pour éviter l'espace blanc */
 }
 
 .contact-form-section.visible {
     opacity: 1;
     transform: translateY(0);
-    max-height: 2000px;
-    padding: var(--spacing-4xl) 0; /* Padding seulement quand visible */
+    max-height: 3000px;
+    padding: var(--spacing-4xl) var(--spacing-lg);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -60,7 +59,7 @@
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
 }
@@ -96,6 +95,8 @@
     font-family: inherit;
     transition: all var(--transition-base);
     background: var(--bg-white);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-input:focus,
@@ -125,6 +126,12 @@
 
 .form-select {
     cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
 }
 
 .error-message {
@@ -148,8 +155,10 @@
 .checkbox-input {
     width: 18px;
     height: 18px;
+    min-width: 18px;
     margin-top: 2px;
     accent-color: var(--primary-color);
+    cursor: pointer;
 }
 
 .checkbox-label {
@@ -164,6 +173,7 @@
     justify-content: center;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-2xl);
+    flex-wrap: wrap;
 }
 
 .btn-submit {
@@ -179,9 +189,10 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
+    white-space: nowrap;
 }
 
-.btn-submit:hover {
+.btn-submit:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -202,6 +213,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-base);
+    white-space: nowrap;
 }
 
 .btn-cancel:hover {
@@ -217,6 +229,7 @@
     border-radius: 50%;
     animation: spin 1s linear infinite;
     display: none;
+    flex-shrink: 0;
 }
 
 @keyframes spin {
@@ -251,7 +264,6 @@
     }
 }
 
-/* Animations pour notifications */
 @keyframes slideInRight {
     from {
         transform: translateX(100%);
@@ -274,36 +286,101 @@
     }
 }
 
-/* Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    .contact-form-section.visible {
+        padding: var(--spacing-2xl) var(--spacing-base);
+    }
+
+    .contact-form-container {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        border-radius: var(--border-radius-xl);
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
 
-    .contact-form-container {
-        padding: var(--spacing-xl);
-        margin: 0 var(--spacing-base);
+    .form-header h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .form-header p {
+        font-size: var(--font-size-base);
     }
 
     .form-actions {
+        gap: var(--spacing-base);
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .btn-submit,
     .btn-cancel {
         width: 100%;
-        max-width: 300px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .contact-form-section.visible {
-        padding: var(--spacing-2xl) 0;
+        padding: var(--spacing-xl) var(--spacing-base);
+    }
+
+    .contact-form-container {
+        padding: var(--spacing-lg);
     }
 
     .form-header h2 {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .form-header h2::after {
+        width: 40px;
+    }
+
+    .form-header p {
+        font-size: var(--font-size-sm);
+    }
+
+    .form-label {
+        font-size: var(--font-size-xs);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: var(--spacing-sm);
+        font-size: 16px;
+    }
+
+    .form-textarea {
+        min-height: 100px;
+    }
+
+    .checkbox-label {
+        font-size: var(--font-size-xs);
+    }
+
+    .btn-submit,
+    .btn-cancel {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+
+    .btn-submit span,
+    .btn-submit i {
+        display: none;
+    }
+
+    .btn-submit::before {
+        content: 'Envoyer';
+    }
+
+    .error-message {
+        font-size: 11px;
     }
 }

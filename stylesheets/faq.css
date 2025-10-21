@@ -81,12 +81,12 @@
     border-radius: 2px;
 }
 
-.section-subtitle {
+/* .section-subtitle {
     color: var(--text-medium);
     font-size: var(--font-size-lg);
     max-width: 600px;
     margin: 0 auto;
-}
+} */
 
 .faq-container {
     max-width: 800px;

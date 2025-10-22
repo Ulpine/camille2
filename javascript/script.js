@@ -161,23 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new AnimateOnScroll();
 });
 
-// ===== PACK CARDS HOVER EFFECTS =====
-// const packCards = document.querySelectorAll('.pack-card');
-
-// packCards.forEach(card => {
-//     card.addEventListener('mouseenter', () => {
-//         card.style.transform = 'translateY(-8px) scale(1.02)';
-//     });
-
-//     card.addEventListener('mouseleave', () => {
-//         if (!card.classList.contains('featured')) {
-//             card.style.transform = 'translateY(0) scale(1)';
-//         } else {
-//             card.style.transform = 'translateY(0) scale(1.05)';
-//         }
-//     });
-// });
-
 // ===== PACK SECTION JAVASCRIPT SIMPLIFIÉ =====
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -562,9 +545,9 @@ preloader.style.cssText = `
 `;
 
 preloader.innerHTML = `
-    <div style="text-align: center;">
-        <div style="width: 50px; height: 50px; border: 3px solid #f3f3f3; border-top: 3px solid #2D5A87; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;"></div>
-        <p style="color: #2D5A87; font-weight: 500;">Chargement...</p>
+    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div style="width: 50px; height: 50px; border: 3px solid #f3f3f3; border-top: 3px solid #2D5A87; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; flex-shrink: 0;"></div>
+        <p style="color: #2D5A87; font-weight: 500; margin: 0;">Chargement...</p>
     </div>
 `;
 

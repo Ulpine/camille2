@@ -88,6 +88,10 @@
 .pack-header {
     padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-lg);
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    /* SUPPRESSION: min-height: 280px; */
+    height: 320px; /* Hauteur fixe pour tous les headers */
 }
 
 .pack-icon {
@@ -103,6 +107,7 @@
     color: var(--bg-white);
     transition: all var(--transition-smooth);
     box-shadow: var(--shadow-lg);
+    flex-shrink: 0;
 }
 
 .pack-card.featured .pack-icon {
@@ -115,6 +120,7 @@
     font-weight: 600;
     margin-bottom: var(--spacing-base);
     color: var(--text-dark);
+    flex-shrink: 0;
 }
 
 .pack-description {
@@ -122,22 +128,26 @@
     margin-bottom: var(--spacing-lg);
     line-height: 1.6;
     font-size: var(--font-size-base);
+    flex-grow: 1; /* Cette ligne pousse le prix en bas */
 }
 
 .pack-price {
     font-size: var(--font-size-lg);
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: var(--spacing-base);
+    margin-bottom: 0;
+    flex-shrink: 0;
+    margin-top: auto; /* Force le prix tout en bas */
 }
 
 .pack-card.featured .pack-price {
     color: var(--secondary-color);
 }
 
-/* ===== VERSION TOGGLE ===== */
-.pack-versions {
-    margin-top: var(--spacing-lg);
+/* ===== TOGGLE WRAPPER - NOUVELLEMENT CRÉÉ ===== */
+.pack-toggle-wrapper {
+    padding: 0 var(--spacing-xl) var(--spacing-lg);
+    flex-shrink: 0;
 }
 
 .version-toggle {
@@ -146,7 +156,6 @@
     background: var(--bg-light);
     padding: 4px;
     border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-base);
     justify-content: center;
 }
 
@@ -328,7 +337,12 @@
     }
 
     .pack-header {
-        padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-base);
+        height: auto; /* Revenir à auto en mobile */
+        min-height: 220px;
+    }
+
+    .pack-toggle-wrapper {
+    padding: 0 var(--spacing-lg) var(--spacing-base);
     }
 
     .pack-features {

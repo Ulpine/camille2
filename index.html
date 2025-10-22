@@ -112,7 +112,7 @@
                     </div>
                     <h3 class="pack-title">Pack Lancement</h3>
                     <p class="pack-description">
-                        Pour les indépendants ou petites entreprises qui se lancent.
+                        Pour les indépendants ou petites entreprises qui se lancent
                     </p>
                     <div class="pack-price">À partir de 1000€</div>
                 </div>
@@ -148,9 +148,9 @@
                     <div class="pack-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3 class="pack-title">Pack Visibilité locale</h3>
+                    <h3 class="pack-title">Pack Visibilité</h3>
                     <p class="pack-description">
-                        Pour artisans, commerçants, TPE qui veulent attirer des clients rapidement.
+                        Pour attirer des clients rapidement
                     </p>
                     <div class="pack-price">À partir de 600€</div>
                 </div>
@@ -170,12 +170,12 @@
                     </div>
                     <div class="feature-item">
                         <i class="feature-bullet"></i>
-                        <span>Création et gestion des campagnes ads publicitaires</span>
+                        <span>Gestion de vos campagnes publicitaires</span>
                     </div>
-                    <div class="feature-item">
+                    <!-- <div class="feature-item">
                         <i class="feature-bullet"></i>
                         <span>Conseils pour développer votre visibilité locale (presse, partenariats, bouche-à-oreille, digital)</span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="pack-footer">
@@ -183,71 +183,74 @@
                 </div>
             </div>
 
-            <!-- Pack Événementiel -->
-            <div class="pack-card" data-pack="evenementiel">
-                <div class="pack-header">
-                    <div class="pack-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="pack-title">Pack Événementiel</h3>
-                    <p class="pack-description">
-                        Pour marquer un temps fort (lancement produit, portes ouvertes, soirée clients)
-                    </p>
-                    <div class="pack-versions">
-                        <div class="version-toggle">
-                            <button class="version-btn active" data-version="essentiel">Essentiel</button>
-                            <button class="version-btn" data-version="premium">Premium</button>
-                        </div>
-                        <div class="pack-price">
-                            <span class="price-essentiel">À partir de 600€</span>
-                            <span class="price-premium" style="display: none;">À partir de 1200€</span>
-                        </div>
-                    </div>
-                </div>
+<!-- Pack Événementiel - STRUCTURE MODIFIÉE -->
+<div class="pack-card" data-pack="evenementiel">
+    <div class="pack-header">
+        <div class="pack-icon">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3 class="pack-title">Pack Événementiel</h3>
+        <p class="pack-description">
+            Pour marquer un temps fort
+        </p>
+        <div class="pack-price">
+            <span class="price-essentiel">À partir de 600€</span>
+            <span class="price-premium" style="display: none;">À partir de 1200€</span>
+        </div>
+    </div>
 
-                <div class="pack-features">
-                    <div class="features-essentiel">
-                        <div class="feature-item">
-                            <i class="feature-bullet"></i>
-                            <span>Conception & organisation de l'événement</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="feature-bullet"></i>
-                            <span>Création de vos supports de communication</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="feature-bullet"></i>
-                            <span>Suivi et gestion des participants</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="feature-bullet"></i>
-                            <span>Plan de communication avant & après</span>
-                        </div>
-                    </div>
+    <!-- Toggle SORTI du header -->
+    <div class="pack-toggle-wrapper">
+        <div class="version-toggle">
+            <button class="version-btn active" data-version="essentiel">Essentiel</button>
+            <button class="version-btn" data-version="premium">Premium</button>
+        </div>
+    </div>
 
-                    <div class="features-premium" style="display: none;">
-                        <div class="feature-item premium">
-                            <i class="feature-bullet"></i>
-                            <span>Tout le pack Essentiel inclus</span>
-                        </div>
-                        <div class="feature-item premium">
-                            <i class="feature-bullet"></i>
-                            <span>Coordination des prestataires</span>
-                        </div>
-                        <div class="feature-item premium">
-                            <i class="feature-bullet"></i>
-                            <span>Présence le jour J</span>
-                        </div>
-                        <div class="feature-item premium">
-                            <i class="feature-bullet"></i>
-                            <span>Communication live (stories, posts)</span>
-                        </div>
-                    </div>
-                </div>
+    <div class="pack-features">
+        <div class="features-essentiel">
+            <div class="feature-item">
+                <i class="feature-bullet"></i>
+                <span>Conception & organisation de l'événement</span>
+            </div>
+            <div class="feature-item">
+                <i class="feature-bullet"></i>
+                <span>Création de vos supports de communication</span>
+            </div>
+            <div class="feature-item">
+                <i class="feature-bullet"></i>
+                <span>Suivi et gestion des participants</span>
+            </div>
+            <div class="feature-item">
+                <i class="feature-bullet"></i>
+                <span>Plan de communication avant & après</span>
+            </div>
+        </div>
 
-                <div class="pack-footer">
-                    <a href="#ctaSection" class="btn btn-outline pack-cta">En savoir plus</a>
-                </div>
+        <div class="features-premium" style="display: none;">
+            <div class="feature-item premium">
+                <i class="feature-bullet"></i>
+                <span>Tout le pack Essentiel inclus</span>
+            </div>
+            <div class="feature-item premium">
+                <i class="feature-bullet"></i>
+                <span>Coordination des prestataires</span>
+            </div>
+            <div class="feature-item premium">
+                <i class="feature-bullet"></i>
+                <span>Présence le jour J</span>
+            </div>
+            <div class="feature-item premium">
+                <i class="feature-bullet"></i>
+                <span>Communication live (stories, posts)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="pack-footer">
+        <a href="#ctaSection" class="btn btn-outline pack-cta">En savoir plus</a>
+    </div>
+</div>
             </div>
         </div>
         <div class="packs-custom-section">
@@ -350,7 +353,7 @@
         <div class="section-header text-center">
           <h2 class="section-title">Pourquoi nous choisir ?</h2>
           <p class="section-subtitle">
-            <span class="subtitle-line">Chez Ozé, nous accompagnons les indépendants, TPE et PME dans leur lancement, leur développement et leurs événements professionnels.</span>
+            <span class="subtitle-line">Chez Ozé communication, nous accompagnons les indépendants, TPE et PME dans leur lancement, leur développement et leurs événements.</span>
             <span class="subtitle-line">Notre approche ? Un savant mélange de stratégie, de créativité et d'audace — pour des projets qui vous ressemblent et qui font la différence.</span>
             <span class="subtitle-line">Parce qu'oser, c'est déjà commencer à briller.</span>
           </p>

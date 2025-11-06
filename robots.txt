@@ -1,0 +1,22 @@
+# OZE Communication - robots.txt
+# Ce fichier indique aux moteurs de recherche comment parcourir votre site
+
+# Pour tous les bots/crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Délai entre les requêtes (en secondes)
+Crawl-delay: 1
+
+# Emplacement du sitemap XML
+Sitemap: https://www.oze-communication.fr/sitemap.xml
+
+# Règles spécifiques pour Googlebot (optionnel)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0

@@ -1,0 +1,21 @@
+{
+  "name": "OZÉ Communication",
+  "short_name": "OZÉ",
+  "description": "Agence de communication à Rennes — Création de sites web, stratégie digitale et événementiel. Faisons briller votre business !",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

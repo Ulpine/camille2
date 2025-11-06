@@ -1,15 +1,11 @@
 /* MAIN CONTENT */
-main {
-    position: relative;
-}
-
 .legal-hero {
     min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #FAF9F6 0%, #FFF5EB 100%);
-    padding: 100px var(--spacing-lg) var(--spacing-4xl);
+    padding: 180px var(--spacing-lg) var(--spacing-4xl);
     text-align: center;
     position: relative;
     overflow: hidden;

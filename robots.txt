@@ -1,4 +1,4 @@
-# OZE Communication - robots.txt
+# Ozé Communication - robots.txt
 # Ce fichier indique aux moteurs de recherche comment parcourir votre site
 
 # Pour tous les bots/crawlers

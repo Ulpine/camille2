@@ -91,9 +91,9 @@
 }
 
 .contact-item span {
-    color: #94A3B8;
+    color: #94A3B8 !important;
     line-height: 1.5;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .footer-bottom {

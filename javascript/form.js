@@ -262,14 +262,39 @@ class ContactFormManager {
     }
 
     async simulateFormSubmission() {
-        // Simuler un délai d'envoi
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                console.log('Formulaire envoyé avec les données:', this.getFormData());
-                resolve();
-            }, 2000);
+    const formData = this.getFormData();
+
+    try {
+        const response = await fetch('https://formspree.io/f/xgvrolgb', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
         });
+
+        if (!response.ok) {
+            throw new Error(`Erreur serveur: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log('Email envoyé avec succès:', result);
+        return result;
+
+    } catch (error) {
+        console.error('Erreur lors de l\'envoi:', error);
+        throw error;
     }
+}
+    // async simulateFormSubmission() {
+        // Simuler un délai d'envoi
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             console.log('Formulaire envoyé avec les données:', this.getFormData());
+    //             resolve();
+    //         }, 2000);
+    //     });
+    // }
 
     getFormData() {
         const formData = new FormData(this.form);

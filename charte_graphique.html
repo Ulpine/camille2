@@ -117,8 +117,6 @@
         .bg-gradient {
             background: linear-gradient(135deg, #D4A574 0%, #E74C3C 100%);
         }
-
-        .card-content {
             padding: 20px;
         }
 
@@ -308,7 +306,52 @@
             </div>
         </div>
 
-        <!-- SECTION 2: BG GRADIENT -->
+        <!-- SECTION 2: BG LIGHT HERO -->
+        <div class="section">
+            <h2 class="section-title">🌅 Style Clair avec Éléments Flottants</h2>
+            <div class="backgrounds-grid">
+                <!-- CARRÉ LIGHT -->
+                <div class="background-card">
+                    <div class="bg-preview square-preview bg-light"></div>
+                    <div class="card-content">
+                        <div class="card-title">📦 Carré</div>
+                        <div class="card-size">1080 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('light', 'square', 1080, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('light', 'square', 1080, 1080, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAYSAGE LIGHT -->
+                <div class="background-card">
+                    <div class="bg-preview landscape-preview bg-light"></div>
+                    <div class="card-content">
+                        <div class="card-title">🏞️ Paysage</div>
+                        <div class="card-size">1920 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('light', 'landscape', 1920, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('light', 'landscape', 1920, 1080, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PORTRAIT LIGHT -->
+                <div class="background-card">
+                    <div class="bg-preview portrait-preview bg-light"></div>
+                    <div class="card-content">
+                        <div class="card-title">📱 Portrait</div>
+                        <div class="card-size">1080 x 1920 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('light', 'portrait', 1080, 1920, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('light', 'portrait', 1080, 1920, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: BG GRADIENT -->
         <div class="section">
             <h2 class="section-title">✨ Style Gradient Gold/Red</h2>
             <div class="backgrounds-grid">
@@ -432,6 +475,43 @@
                 gradient.addColorStop(1, '#E74C3C');
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, width, height);
+            } else if (style === 'light') {
+                // Gradient clair
+                const gradient = ctx.createLinearGradient(0, 0, width, height);
+                gradient.addColorStop(0, '#FAF9F6');
+                gradient.addColorStop(1, '#FFF5EB');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, width, height);
+
+                // Élément 1 - Haut-droit (Gold/Red gradient) position: top -150px, right -150px
+                const elem1 = ctx.createRadialGradient(width + 150, -150, 0, width + 150, -150, 300);
+                elem1.addColorStop(0, 'rgba(212, 165, 116, 0.4)');
+                elem1.addColorStop(0.5, 'rgba(231, 76, 60, 0.2)');
+                elem1.addColorStop(1, 'rgba(231, 76, 60, 0)');
+                ctx.fillStyle = elem1;
+                ctx.beginPath();
+                ctx.arc(width + 150, -150, 300, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Élément 2 - Bas-gauche (Red/Orange gradient) position: bottom -100px, left -100px
+                const elem2 = ctx.createRadialGradient(-100, height + 100, 0, -100, height + 100, 200);
+                elem2.addColorStop(0, 'rgba(231, 76, 60, 0.4)');
+                elem2.addColorStop(0.7, 'rgba(243, 156, 18, 0.3)');
+                elem2.addColorStop(1, 'rgba(243, 156, 18, 0)');
+                ctx.fillStyle = elem2;
+                ctx.beginPath();
+                ctx.arc(-100, height + 100, 200, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Élément 3 - Droite-milieu (Blue/Green gradient) position: top 50%, right 10%
+                const elem3 = ctx.createRadialGradient(width * 0.9, height * 0.5, 0, width * 0.9, height * 0.5, 150);
+                elem3.addColorStop(0, 'rgba(52, 152, 219, 0.3)');
+                elem3.addColorStop(0.5, 'rgba(46, 204, 113, 0.2)');
+                elem3.addColorStop(1, 'rgba(46, 204, 113, 0)');
+                ctx.fillStyle = elem3;
+                ctx.beginPath();
+                ctx.arc(width * 0.9, height * 0.5, 150, 0, Math.PI * 2);
+                ctx.fill();
             }
 
             return canvas;
@@ -449,7 +529,7 @@
             link.download = `bg-${style}-${format}-${width}x${height}.${ext}`;
             link.click();
 
-            showToast(`✓ ${style === 'dark' ? 'Sombre' : 'Gradient'} - ${format} ${width}x${height} ${type} téléchargé !`);
+            showToast(`✓ ${style === 'dark' ? 'Sombre' : style === 'light' ? 'Clair' : 'Gradient'} - ${format} ${width}x${height} ${type} téléchargé !`);
         }
 
         function copyToClipboard(color) {

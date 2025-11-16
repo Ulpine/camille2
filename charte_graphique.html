@@ -18,7 +18,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -36,11 +36,22 @@
             font-size: 1rem;
         }
 
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2C3E50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #D4A574;
+        }
+
         .backgrounds-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
         }
 
         .background-card {
@@ -63,12 +74,32 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1rem;
             position: relative;
             overflow: hidden;
         }
 
-        .bg-preview::before {
+        .square-preview {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+        }
+
+        .landscape-preview {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .portrait-preview {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+        }
+
+        /* DARK BG */
+        .bg-dark {
+            background: linear-gradient(135deg, #2C3E50 0%, #1a1a1a 100%);
+        }
+
+        .bg-dark::before {
             content: '';
             position: absolute;
             top: 0;
@@ -79,36 +110,12 @@
                 radial-gradient(circle at 20% 50%, #D4A574 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, #E74C3C 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, #3498DB 0%, transparent 50%);
-            opacity: 0.1;
-            animation: pulse 4s ease-in-out infinite;
+            opacity: 0.15;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.2; }
-        }
-
-        .square-preview {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(135deg, #2C3E50 0%, #1a1a1a 100%);
-        }
-
-        .landscape-preview {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: linear-gradient(135deg, #2C3E50 0%, #1a1a1a 100%);
-        }
-
-        .portrait-preview {
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            background: linear-gradient(135deg, #2C3E50 0%, #1a1a1a 100%);
-        }
-
-        .bg-preview span {
-            position: relative;
-            z-index: 1;
+        /* GRADIENT BG */
+        .bg-gradient {
+            background: linear-gradient(135deg, #D4A574 0%, #E74C3C 100%);
         }
 
         .card-content {
@@ -116,15 +123,15 @@
         }
 
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #2C3E50;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
         .card-size {
             color: #999;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 15px;
         }
 
@@ -141,7 +148,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .btn-download {
@@ -152,16 +159,6 @@
         .btn-download:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
-        }
-
-        .btn-copy {
-            background: #f0f0f0;
-            color: #2C3E50;
-            border: 1px solid #ddd;
-        }
-
-        .btn-copy:hover {
-            background: #e0e0e0;
         }
 
         .info-section {
@@ -239,6 +236,13 @@
             }
         }
 
+        @keyframes slideOut {
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .backgrounds-grid {
                 grid-template-columns: 1fr;
@@ -257,44 +261,93 @@
 <body>
     <div class="container">
         <h1>📥 Télécharger les Backgrounds</h1>
-        <p class="subtitle">Sélectionnez le format et la taille de votre background</p>
+        <p class="subtitle">Deux styles disponibles : Sombre avec effets et Gradient Gold/Red</p>
 
-        <div class="backgrounds-grid">
-            <!-- CARRÉ -->
-            <div class="background-card">
-                <div class="bg-preview square-preview"><span>Carré</span></div>
-                <div class="card-content">
-                    <div class="card-title">📦 Format Carré</div>
-                    <div class="card-size">1080 x 1080 px</div>
-                    <div class="button-group">
-                        <button class="btn-download" onclick="downloadBackground('square', 1080, 1080, 'PNG')">PNG</button>
-                        <button class="btn-download" onclick="downloadBackground('square', 1080, 1080, 'JPG')">JPG</button>
+        <!-- SECTION 1: BG SOMBRE -->
+        <div class="section">
+            <h2 class="section-title">🌙 Style Sombre avec Effets</h2>
+            <div class="backgrounds-grid">
+                <!-- CARRÉ SOMBRE -->
+                <div class="background-card">
+                    <div class="bg-preview square-preview bg-dark"></div>
+                    <div class="card-content">
+                        <div class="card-title">📦 Carré</div>
+                        <div class="card-size">1080 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('dark', 'square', 1080, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('dark', 'square', 1080, 1080, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAYSAGE SOMBRE -->
+                <div class="background-card">
+                    <div class="bg-preview landscape-preview bg-dark"></div>
+                    <div class="card-content">
+                        <div class="card-title">🏞️ Paysage</div>
+                        <div class="card-size">1920 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('dark', 'landscape', 1920, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('dark', 'landscape', 1920, 1080, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PORTRAIT SOMBRE -->
+                <div class="background-card">
+                    <div class="bg-preview portrait-preview bg-dark"></div>
+                    <div class="card-content">
+                        <div class="card-title">📱 Portrait</div>
+                        <div class="card-size">1080 x 1920 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('dark', 'portrait', 1080, 1920, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('dark', 'portrait', 1080, 1920, 'JPG')">JPG</button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- PAYSAGE -->
-            <div class="background-card">
-                <div class="bg-preview landscape-preview"><span>Paysage</span></div>
-                <div class="card-content">
-                    <div class="card-title">🏞️ Format Paysage</div>
-                    <div class="card-size">1920 x 1080 px</div>
-                    <div class="button-group">
-                        <button class="btn-download" onclick="downloadBackground('landscape', 1920, 1080, 'PNG')">PNG</button>
-                        <button class="btn-download" onclick="downloadBackground('landscape', 1920, 1080, 'JPG')">JPG</button>
+        <!-- SECTION 2: BG GRADIENT -->
+        <div class="section">
+            <h2 class="section-title">✨ Style Gradient Gold/Red</h2>
+            <div class="backgrounds-grid">
+                <!-- CARRÉ GRADIENT -->
+                <div class="background-card">
+                    <div class="bg-preview square-preview bg-gradient"></div>
+                    <div class="card-content">
+                        <div class="card-title">📦 Carré</div>
+                        <div class="card-size">1080 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'square', 1080, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'square', 1080, 1080, 'JPG')">JPG</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- PORTRAIT -->
-            <div class="background-card">
-                <div class="bg-preview portrait-preview"><span>Portrait</span></div>
-                <div class="card-content">
-                    <div class="card-title">📱 Format Portrait</div>
-                    <div class="card-size">1080 x 1920 px</div>
-                    <div class="button-group">
-                        <button class="btn-download" onclick="downloadBackground('portrait', 1080, 1920, 'PNG')">PNG</button>
-                        <button class="btn-download" onclick="downloadBackground('portrait', 1080, 1920, 'JPG')">JPG</button>
+                <!-- PAYSAGE GRADIENT -->
+                <div class="background-card">
+                    <div class="bg-preview landscape-preview bg-gradient"></div>
+                    <div class="card-content">
+                        <div class="card-title">🏞️ Paysage</div>
+                        <div class="card-size">1920 x 1080 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'landscape', 1920, 1080, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'landscape', 1920, 1080, 'JPG')">JPG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PORTRAIT GRADIENT -->
+                <div class="background-card">
+                    <div class="bg-preview portrait-preview bg-gradient"></div>
+                    <div class="card-content">
+                        <div class="card-title">📱 Portrait</div>
+                        <div class="card-size">1080 x 1920 px</div>
+                        <div class="button-group">
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'portrait', 1080, 1920, 'PNG')">PNG</button>
+                            <button class="btn-download" onclick="downloadBackground('gradient', 'portrait', 1080, 1920, 'JPG')">JPG</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -306,27 +359,27 @@
             <div class="colors-grid">
                 <div class="color-item">
                     <div class="color-box" style="background: #D4A574;" onclick="copyToClipboard('#D4A574')"></div>
-                    <div class="color-name">Primary</div>
+                    <div class="color-name">Gold/Beige</div>
                     <div class="color-value">#D4A574</div>
                 </div>
                 <div class="color-item">
                     <div class="color-box" style="background: #E74C3C;" onclick="copyToClipboard('#E74C3C')"></div>
-                    <div class="color-name">Accent</div>
+                    <div class="color-name">Red/Orange</div>
                     <div class="color-value">#E74C3C</div>
                 </div>
                 <div class="color-item">
                     <div class="color-box" style="background: #2C3E50;" onclick="copyToClipboard('#2C3E50')"></div>
-                    <div class="color-name">Secondary</div>
+                    <div class="color-name">Dark Blue</div>
                     <div class="color-value">#2C3E50</div>
                 </div>
                 <div class="color-item">
                     <div class="color-box" style="background: #3498DB;" onclick="copyToClipboard('#3498DB')"></div>
-                    <div class="color-name">Blue</div>
+                    <div class="color-name">Sky Blue</div>
                     <div class="color-value">#3498DB</div>
                 </div>
                 <div class="color-item">
                     <div class="color-box" style="background: #1a1a1a;" onclick="copyToClipboard('#1a1a1a')"></div>
-                    <div class="color-name">Dark</div>
+                    <div class="color-name">Very Dark</div>
                     <div class="color-value">#1a1a1a</div>
                 </div>
                 <div class="color-item">
@@ -339,49 +392,54 @@
     </div>
 
     <script>
-        function generateBackground(width, height) {
+        function generateBackground(style, format, width, height) {
             const canvas = document.createElement('canvas');
             canvas.width = width;
             canvas.height = height;
             const ctx = canvas.getContext('2d');
 
-            // Gradient de base diagonal (2C3E50 vers 1a1a1a)
-            const gradient = ctx.createLinearGradient(0, 0, width, height);
-            gradient.addColorStop(0, '#2C3E50');
-            gradient.addColorStop(1, '#1a1a1a');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
+            if (style === 'dark') {
+                // Gradient sombre
+                const gradient = ctx.createLinearGradient(0, 0, width, height);
+                gradient.addColorStop(0, '#2C3E50');
+                gradient.addColorStop(1, '#1a1a1a');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, width, height);
 
-            // Radial 1 - Gold/Beige (haut-gauche)
-            const radial1 = ctx.createRadialGradient(width * 0.1, height * 0.1, 0, width * 0.1, height * 0.1, Math.max(width, height) * 1.2);
-            radial1.addColorStop(0, 'rgba(212, 165, 116, 0.8)');
-            radial1.addColorStop(0.3, 'rgba(212, 165, 116, 0.5)');
-            radial1.addColorStop(0.6, 'rgba(212, 165, 116, 0.2)');
-            radial1.addColorStop(1, 'rgba(212, 165, 116, 0)');
-            ctx.fillStyle = radial1;
-            ctx.fillRect(0, 0, width, height);
+                // Effets radial
+                const radial1 = ctx.createRadialGradient(width * 0.2, height * 0.2, 0, width * 0.2, height * 0.2, Math.max(width, height) * 0.8);
+                radial1.addColorStop(0, 'rgba(212, 165, 116, 0.5)');
+                radial1.addColorStop(0.5, 'rgba(212, 165, 116, 0.2)');
+                radial1.addColorStop(1, 'rgba(212, 165, 116, 0)');
+                ctx.fillStyle = radial1;
+                ctx.fillRect(0, 0, width, height);
 
-            // Radial 2 - Red/Orange (80%, 80%)
-            const radial2 = ctx.createRadialGradient(width * 0.8, height * 0.8, 0, width * 0.8, height * 0.8, Math.max(width, height) * 0.8);
-            radial2.addColorStop(0, 'rgba(231, 76, 60, 0.5)');
-            radial2.addColorStop(0.5, 'rgba(231, 76, 60, 0.15)');
-            radial2.addColorStop(1, 'rgba(231, 76, 60, 0)');
-            ctx.fillStyle = radial2;
-            ctx.fillRect(0, 0, width, height);
+                const radial2 = ctx.createRadialGradient(width * 0.8, height * 0.8, 0, width * 0.8, height * 0.8, Math.max(width, height) * 0.8);
+                radial2.addColorStop(0, 'rgba(231, 76, 60, 0.15)');
+                radial2.addColorStop(1, 'rgba(231, 76, 60, 0)');
+                ctx.fillStyle = radial2;
+                ctx.fillRect(0, 0, width, height);
 
-            // Radial 3 - Blue (40%, 20%)
-            const radial3 = ctx.createRadialGradient(width * 0.4, height * 0.2, 0, width * 0.4, height * 0.2, Math.max(width, height) * 0.8);
-            radial3.addColorStop(0, 'rgba(52, 152, 219, 0.3)');
-            radial3.addColorStop(0.5, 'rgba(52, 152, 219, 0.08)');
-            radial3.addColorStop(1, 'rgba(52, 152, 219, 0)');
-            ctx.fillStyle = radial3;
-            ctx.fillRect(0, 0, width, height);
+                const radial3 = ctx.createRadialGradient(width * 0.4, height * 0.2, 0, width * 0.4, height * 0.2, Math.max(width, height) * 0.8);
+                radial3.addColorStop(0, 'rgba(52, 152, 219, 0.15)');
+                radial3.addColorStop(1, 'rgba(52, 152, 219, 0)');
+                ctx.fillStyle = radial3;
+                ctx.fillRect(0, 0, width, height);
+
+            } else if (style === 'gradient') {
+                // Gradient gold vers red
+                const gradient = ctx.createLinearGradient(0, 0, width, height);
+                gradient.addColorStop(0, '#D4A574');
+                gradient.addColorStop(1, '#E74C3C');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, width, height);
+            }
 
             return canvas;
         }
 
-        function downloadBackground(format, width, height, type) {
-            const canvas = generateBackground(width, height);
+        function downloadBackground(style, format, width, height, type) {
+            const canvas = generateBackground(style, format, width, height);
             const link = document.createElement('a');
 
             const mimeType = type === 'PNG' ? 'image/png' : 'image/jpeg';
@@ -389,10 +447,10 @@
             const quality = type === 'PNG' ? undefined : 0.95;
 
             link.href = canvas.toDataURL(mimeType, quality);
-            link.download = `background-${format}-${width}x${height}.${ext}`;
+            link.download = `bg-${style}-${format}-${width}x${height}.${ext}`;
             link.click();
 
-            showToast(`✓ ${format.charAt(0).toUpperCase() + format.slice(1)} ${width}x${height} ${type} téléchargé !`);
+            showToast(`✓ ${style === 'dark' ? 'Sombre' : 'Gradient'} - ${format} ${width}x${height} ${type} téléchargé !`);
         }
 
         function copyToClipboard(color) {
@@ -411,18 +469,6 @@
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
-
-        // Ajouter animation slideOut
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideOut {
-                to {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>

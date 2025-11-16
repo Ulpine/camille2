@@ -406,22 +406,21 @@
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, width, height);
 
-                // Effets radial
+                // Effets radial avec opacité 0.1 comme sur le site
                 const radial1 = ctx.createRadialGradient(width * 0.2, height * 0.2, 0, width * 0.2, height * 0.2, Math.max(width, height) * 0.8);
-                radial1.addColorStop(0, 'rgba(212, 165, 116, 0.2)');
-                radial1.addColorStop(0.5, 'rgba(212, 165, 116, 0.2)');
+                radial1.addColorStop(0, 'rgba(212, 165, 116, 0.1)');
                 radial1.addColorStop(1, 'rgba(212, 165, 116, 0)');
                 ctx.fillStyle = radial1;
                 ctx.fillRect(0, 0, width, height);
 
                 const radial2 = ctx.createRadialGradient(width * 0.8, height * 0.8, 0, width * 0.8, height * 0.8, Math.max(width, height) * 0.8);
-                radial2.addColorStop(0, 'rgba(231, 76, 60, 0.15)');
+                radial2.addColorStop(0, 'rgba(231, 76, 60, 0.1)');
                 radial2.addColorStop(1, 'rgba(231, 76, 60, 0)');
                 ctx.fillStyle = radial2;
                 ctx.fillRect(0, 0, width, height);
 
                 const radial3 = ctx.createRadialGradient(width * 0.4, height * 0.2, 0, width * 0.4, height * 0.2, Math.max(width, height) * 0.8);
-                radial3.addColorStop(0, 'rgba(52, 152, 219, 0.15)');
+                radial3.addColorStop(0, 'rgba(52, 152, 219, 0.1)');
                 radial3.addColorStop(1, 'rgba(52, 152, 219, 0)');
                 ctx.fillStyle = radial3;
                 ctx.fillRect(0, 0, width, height);

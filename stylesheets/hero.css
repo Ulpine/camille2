@@ -144,6 +144,7 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    line-height: 1.8;
 }
 
 @font-face {
@@ -154,6 +155,8 @@
 .dream {
     font-family: 'Dream Avenue', sans-serif;
     font-size: 2rem;
+    line-height: 1; /* ← AJOUTEZ CETTE LIGNE */
+    display: inline-block; /* ← AJOUTEZ CETTE LIGNE */
 }
 
 .hero-buttons {

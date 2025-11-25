@@ -14,6 +14,7 @@
 }
 
 .section-header {
+    padding-top: var(--spacing-2xl);
     margin-bottom: var(--spacing-5xl);
 }
 

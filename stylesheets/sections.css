@@ -273,6 +273,8 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 var(--spacing-xl);
+    position: relative;
+    z-index: 2;
 }
 
 .packs-custom-section h3 {
@@ -377,6 +379,80 @@
         font-size: var(--font-size-sm);
     }
 }
+
+/* Pack sur mesure */
+
+.sur-mesure {
+    background: linear-gradient(135deg, #FAF9F6 0%, #FFF5EB 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+    /* height: 100vh; */
+}
+
+/* Background avec éléments flottants */
+.sur-mesure-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* ← MODIFIEZ DE 1 À 0 */
+    pointer-events: none;
+}
+
+.sur-mesure .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.sur-mesure .element-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-primary);
+    top: -150px;
+    right: -150px;
+    animation-delay: 0s;
+}
+
+.sur-mesure .element-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #E74C3C 0%, #F39C12 100%);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+.sur-mesure .element-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #3498DB 0%, #2ECC71 100%);
+    top: 90%;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+/* Animation des éléments flottants */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    33% {
+        transform: translateY(-20px) scale(1.05);
+    }
+    66% {
+        transform: translateY(10px) scale(0.95);
+    }
+}
+
+
+
+
+
 
 /* ===== TESTIMONIALS SECTION ===== */
 .testimonials {
